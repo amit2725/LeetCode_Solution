@@ -21,21 +21,6 @@ public:
                 }
 
             }
-            // while(!st.empty() && x > 0 && st.top() < 0){
-            //     if(abs(st.top()) < abs(x)){
-            //         st.pop();
-            //     }
-            //     else if(abs(st.top()) == abs(x)){
-            //         st.pop();
-            //         a=false;
-            //         break;
-            //     }
-            //     else{
-            //         a = false;
-            //         break;
-            //     }
-
-            // }
             if(a) st.push(x);
            
         }
