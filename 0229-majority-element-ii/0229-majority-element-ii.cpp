@@ -28,8 +28,7 @@ public:
         }
         countA = 0;
         countB = 0;
-
-        for (int x : nums) {
+        for (int x:nums) {
             if (x == A)
                 countA++;
             else if (x == B)
