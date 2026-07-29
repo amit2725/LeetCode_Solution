@@ -1,9 +1,8 @@
 class Solution {
 public:
     bool judgeSquareSum(int c) {
-        int nums = sqrt(c);
-        double high=nums;
-        double low = 0;
+        long long high = sqrt(c);
+        long long low = 0;
         while (low <= high) {
             if ((low * low) + (high * high) == c) {
                 return true;
