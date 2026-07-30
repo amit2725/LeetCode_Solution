@@ -1,10 +1,17 @@
 class Solution {
 public:
     int minimumPushes(string word) {
-        int ans=0;
+        int sum=0;
+        vector<int>key(8,0);
         for(int i=0;i<word.size();i++){
-            ans=ans+(i/8)+1;
+           if(key[i%8]==0) key[i%8]++;
+           else{
+            key[i%8]=key[i%8]+(i/8)+1;
+           }
         }
-        return ans;
+        for(int x:key){
+            sum=sum+x;
+        }
+        return sum;
     }
 };
