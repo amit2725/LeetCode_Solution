@@ -28,7 +28,7 @@ public:
 
                     if (j == numRows - 1 - (i % (numRows - 1))) {
                         temp[j][i] = s[k++];
-                        break;
+                        //break;
                     }
                 }
             }
