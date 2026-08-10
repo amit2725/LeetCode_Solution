@@ -11,27 +11,36 @@ public:
         );
 
         int k = 0;
+        string ans;
 
-        for (int col = 0; k < s.size(); col++) {
+        for (int i = 0; k < s.size(); i++) {
 
-            
-            for (int row = 0; row < numRows && k < s.size(); row++) {
-                temp[row][col] = s[k++];
+            if (i % (numRows - 1) == 0) {
+
+                for (int j = 0; j < numRows && k < s.size(); j++) {
+                    temp[j][i] = s[k++];
+                }
+
             }
+            else {
 
-            
-            for (int row = numRows - 2; row > 0 && k < s.size(); row--) {
-                col++;
-                temp[row][col] = s[k++];
+                for (int j = 0; j < numRows; j++) {
+
+                    if (j == numRows - 1 - (i % (numRows - 1))) {
+                        temp[j][i] = s[k++];
+                        break;
+                    }
+                }
             }
         }
 
-        string ans = "";
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < s.size(); j++) {
 
-        for (int row = 0; row < numRows; row++) {
-            for (int col = 0; col < s.size(); col++) {
-                if (temp[row][col] != '0')
-                    ans += temp[row][col];
+                if (temp[i][j] != '0') {
+                    ans.push_back(temp[i][j]);
+                }
+
             }
         }
 
