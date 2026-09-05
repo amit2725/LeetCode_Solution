@@ -1,0 +1,36 @@
+class Solution {
+    public int nums(char c) {
+        if (c == 'I')
+            return 1;
+        else if (c == 'V')
+            return 5;
+        else if (c == 'X')
+            return 10;
+        else if (c == 'L')
+            return 50;
+        else if (c == 'C')
+            return 100;
+        else if (c == 'D')
+            return 500;
+        else if (c == 'M')
+            return 1000;
+        else
+            return 0;
+    }
+
+    public int romanToInt(String s) {
+        int n = s.length();
+        int i = 0;
+        int sum = 0;
+        while (i < n - 1) {
+            if (nums(s.charAt(i)) >= nums(s.charAt(i+1))) {
+                sum = sum + nums(s.charAt(i));
+            } else{
+                sum = sum - nums(s.charAt(i));
+            }
+            i++;
+        }
+        sum += nums(s.charAt(n-1));
+        return sum;
+    }
+}
